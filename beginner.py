@@ -81,16 +81,12 @@ def switch_to_minesweeper_tab(driver):
         if "minesweeperonline.com" in driver.current_url:
             return
     driver.get("https://minesweeperonline.com/#beginner")
-    time.sleep(2)
+    time.sleep(1)
 
 # ───────────────────────── ALERT HANDLER ─────────────────────────
 def check_for_alert(driver):
     try:
         driver.switch_to.alert
-
-        print("\n" + "="*55)
-        print("🔔 ALERT DETECTED — waiting for user input")
-        print("="*55)
 
         # Wait until alert disappears
         while True:
